@@ -38,19 +38,12 @@ const Dashboard = () => {
 
   const spentShare = useMemo(() => {
     if (!data?.totalIncome) return 0;
-    return Math.min(
-      100,
-      Math.round((data.totalExpense / data.totalIncome) * 100),
-    );
+    return Math.min(100, Math.round((data.totalExpense / data.totalIncome) * 100));
   }, [data]);
 
   if (loading) {
     return (
-      <div
-        className="space-y-6"
-        aria-busy="true"
-        aria-label="Loading dashboard"
-      >
+      <div className="space-y-6" aria-busy="true" aria-label="Loading dashboard">
         <Skeleton className="h-9 w-64 bg-white" />
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           <Skeleton className="h-40 bg-white" />
@@ -69,79 +62,54 @@ const Dashboard = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-[#0B2452] sm:text-3xl">
+        <h1 className="text-2xl font-bold text-finora-primary sm:text-3xl">
           Welcome back{firstName ? `, ${firstName}` : ""}
         </h1>
-        <p className="mt-1 text-sm font-normal text-[#556987]">
+        <p className="mt-1 text-sm font-normal text-finora-muted">
           Here is where your money stands today.
         </p>
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <StatCard
-          hero
-          label="Total balance"
-          value={data.totalBalance}
-          icon={Wallet}
-        >
+        <StatCard hero label="Total balance" value={data.totalBalance} icon={Wallet}>
           <div className="mt-4">
             <div className="h-2 overflow-hidden rounded-full bg-white/15">
               <div
-                className="h-full rounded-full bg-[#FFB900] transition-[width] duration-700"
+                className="h-full rounded-full bg-primary-yellow transition-[width] duration-700"
                 style={{ width: `${spentShare}%` }}
               />
             </div>
-            <p className="mt-2 text-xs font-normal text-[#AFC3EA]">
+            <p className="mt-2 text-xs font-normal text-finora-secondary">
               {data.totalIncome
                 ? `${spentShare}% of your income is spent`
                 : "Add income to see how much you spend"}
             </p>
           </div>
         </StatCard>
-        <StatCard
-          label="Total income"
-          value={data.totalIncome}
-          icon={TrendingUp}
-          tone="gain"
-        />
-        <StatCard
-          label="Total expense"
-          value={data.totalExpense}
-          icon={TrendingDown}
-          tone="loss"
-        />
+        <StatCard label="Total income" value={data.totalIncome} icon={TrendingUp} tone="gain" />
+        <StatCard label="Total expense" value={data.totalExpense} icon={TrendingDown} tone="loss" />
       </div>
 
       {isEmpty ? (
         <section className="card text-center">
-          <h2 className="text-xl font-bold text-[#0B2452]">Nothing tracked yet</h2>
-          <p className="mx-auto mt-2 max-w-md text-sm font-normal text-[#556987]">
+          <h2 className="text-xl font-bold text-finora-primary">Nothing tracked yet</h2>
+          <p className="mx-auto mt-2 max-w-md text-sm font-normal text-finora-muted">
             Add your first income or expense and your charts will appear here.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Link to="/income" className="btn-yellow">
-              Add income
-            </Link>
-            <Link to="/expense" className="btn-soft">
-              Add expense
-            </Link>
+            <Link to="/income" className="btn-yellow">Add income</Link>
+            <Link to="/expense" className="btn-soft">Add expense</Link>
           </div>
         </section>
       ) : (
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           <section className="card">
-            <CardHeader
-              title="Recent transactions"
-              hint="Latest income and expenses"
-            />
+            <CardHeader title="Recent transactions" hint="Latest income and expenses" />
             <List items={data.recentTransactions} />
           </section>
 
           <section className="card">
-            <CardHeader
-              title="Financial overview"
-              hint="Balance, income and expenses"
-            />
+            <CardHeader title="Financial overview" hint="Balance, income and expenses" />
             <BalancePie
               balance={data.totalBalance}
               income={data.totalIncome}
@@ -156,7 +124,7 @@ const Dashboard = () => {
             {data.recentExpenses.length ? (
               <List items={data.recentExpenses} kind="expense" />
             ) : (
-              <p className="text-sm font-normal text-[#556987]">No expenses yet.</p>
+              <p className="text-sm font-normal text-finora-muted">No expenses yet.</p>
             )}
           </section>
 
@@ -170,10 +138,7 @@ const Dashboard = () => {
           </section>
 
           <section className="card">
-            <CardHeader
-              title="Last 60 days income"
-              hint="Where your income came from"
-            />
+            <CardHeader title="Last 60 days income" hint="Where your income came from" />
             <SourcePie
               items={data.last60DaysIncome.transactions}
               labelKey="source"
@@ -188,7 +153,7 @@ const Dashboard = () => {
             {data.recentIncome.length ? (
               <List items={data.recentIncome} kind="income" />
             ) : (
-              <p className="text-sm font-normal text-[#556987]">No income yet.</p>
+              <p className="text-sm font-normal text-finora-muted">No income yet.</p>
             )}
           </section>
         </div>

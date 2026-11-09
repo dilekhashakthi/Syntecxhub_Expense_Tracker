@@ -6,10 +6,10 @@ const IconPicker = ({ kind, value, onChange }) => {
 
   return (
     <fieldset>
-      <legend className="mb-1.5 text-sm font-medium text-[#0B2452]">
+      <legend className="mb-1.5 text-sm font-medium text-finora-primary">
         Icon
         {selected && (
-          <span className="ml-2 font-normal text-[#556987]">
+          <span className="ml-2 font-normal text-finora-muted">
             {selected.label}
           </span>
         )}
@@ -32,8 +32,8 @@ const IconPicker = ({ kind, value, onChange }) => {
               onClick={() => onChange(key)}
               className={`grid h-11 place-items-center rounded-xl border transition-colors cursor-pointer ${
                 isSelected
-                  ? "border-[#102D65] bg-[#102D65] text-white shadow-sm"
-                  : "border-[#D4DDF3] bg-white text-[#556987] hover:bg-[#F5F7FC] hover:text-[#0B2452]"
+                  ? "border-primary-navy bg-primary-navy text-white shadow-sm"
+                  : "border-finora-border bg-white text-finora-muted hover:bg-bg-light hover:text-finora-primary"
               }`}
             >
               <Icon className="h-5 w-5" aria-hidden="true" />

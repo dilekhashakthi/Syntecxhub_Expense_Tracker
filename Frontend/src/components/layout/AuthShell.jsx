@@ -30,10 +30,10 @@ const AuthShell = ({ title, subtitle, children, footer }) => {
         <div className="my-auto py-10">
           <h2 className="font-display text-4xl lg:text-[44px] font-bold leading-[1.15] text-white tracking-tight">
             Know where <br />
-            every <span className="text-[#FFB900]">rupee</span> goes.
+            every <span className="text-primary-yellow">rupee</span> goes.
           </h2>
 
-          <p className="mt-4 text-base font-normal text-[#AFC3EA] leading-relaxed">
+          <p className="mt-4 text-base font-normal text-finora-secondary leading-relaxed">
             Take control of your finances with <br />
             simple and smart tracking.
           </p>
@@ -41,14 +41,14 @@ const AuthShell = ({ title, subtitle, children, footer }) => {
           <div className="mt-10 space-y-6">
             {FEATURES.map((item) => (
               <div key={item.title} className="flex items-center gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-[#FFB900] shadow-sm backdrop-blur-xs">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-primary-yellow shadow-sm">
                   <item.icon className="h-6 w-6" aria-hidden="true" />
                 </div>
                 <div>
                   <h3 className="text-base font-semibold text-white">
                     {item.title}
                   </h3>
-                  <p className="text-sm font-normal text-[#AFC3EA]">
+                  <p className="text-sm font-normal text-finora-secondary">
                     {item.description}
                   </p>
                 </div>
@@ -56,12 +56,13 @@ const AuthShell = ({ title, subtitle, children, footer }) => {
             ))}
           </div>
         </div>
+
         <div />
       </aside>
 
       {/* Right panel */}
       <main className="flex items-center justify-center bg-white p-6 sm:p-10 lg:p-12">
-        <div className="w-full max-w-[420px]">
+        <div className="w-full max-w-105">
           {/* Centered Finora Logo */}
           <div className="mb-6 flex justify-center">
             <FinoraLogo theme="dark" showSubtitle={false} size="lg" />

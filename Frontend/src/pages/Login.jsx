@@ -10,10 +10,7 @@ import { getErrorMessage } from "../utils/errors";
 const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
-  const [form, setForm] = useState({
-    email: "",
-    password: "",
-  });
+  const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
 
@@ -26,10 +23,7 @@ const Login = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
@@ -66,13 +60,13 @@ const Login = () => {
       footer={
         <div className="relative mt-8 flex items-center justify-center">
           <div className="absolute inset-0 flex items-center" aria-hidden="true">
-            <div className="w-full border-t border-[#D4DDF3]" />
+            <div className="w-full border-t border-finora-border" />
           </div>
-          <div className="relative bg-white px-3 text-sm font-normal text-[#556987]">
+          <div className="relative bg-white px-3 text-sm font-normal text-finora-muted">
             Don't have an account?{" "}
             <Link
               to="/register"
-              className="font-semibold text-[#4779D5] hover:underline inline-flex items-center gap-1"
+              className="font-semibold text-primary-blue hover:underline inline-flex items-center gap-1"
             >
               Create one <span aria-hidden="true">&rarr;</span>
             </Link>
@@ -83,7 +77,7 @@ const Login = () => {
       <form onSubmit={handleSubmit} className="space-y-4" noValidate>
         {/* Email Field */}
         <div className="relative">
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-[#0B2452]">
+          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-finora-primary">
             <Mail className="h-5 w-5" aria-hidden="true" />
           </div>
           <input
@@ -93,7 +87,7 @@ const Login = () => {
             ref={emailRef}
             value={form.email}
             onChange={handleChange}
-            className="w-full rounded-2xl border border-[#D4DDF3] bg-white py-3.5 pl-11 pr-4 text-sm font-normal text-[#0B2452] placeholder:font-normal placeholder:text-[#94A3B8] transition-colors focus:border-[#4779D5] focus:ring-2 focus:ring-[#4779D5]/20 focus:outline-none"
+            className="w-full rounded-2xl border border-finora-border bg-white py-3.5 pl-11 pr-4 text-sm font-normal text-finora-primary placeholder:font-normal placeholder:text-finora-muted transition-colors focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 focus:outline-none"
             placeholder="Email address"
             autoComplete="email"
             aria-label="Email address"
@@ -120,7 +114,7 @@ const Login = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#FFB900] py-3.5 text-base font-semibold text-[#0B2452] shadow-sm transition-all hover:bg-[#eab007] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60 cursor-pointer"
+          className="btn-yellow w-full py-3.5! text-base!"
           disabled={busy}
         >
           <span>{busy ? "Logging in..." : "Log in"}</span>

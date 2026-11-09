@@ -53,7 +53,7 @@ const TransactionsPage = ({ kind }) => {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold text-[#0B2452] sm:text-3xl">{config.title}</h1>
+      <h1 className="text-2xl font-bold text-finora-primary sm:text-3xl">{config.title}</h1>
 
       <section className="card">
         <CardHeader title={config.overviewTitle} hint={config.overviewHint}>
@@ -62,7 +62,7 @@ const TransactionsPage = ({ kind }) => {
           </button>
         </CardHeader>
         {loading ? (
-          <Skeleton className="h-64 bg-[#F5F7FC]!" />
+          <Skeleton className="h-64 bg-bg-light!" />
         ) : kind === "income" ? (
           <DayBarChart items={items} empty={config.emptyHint} />
         ) : (
@@ -75,21 +75,17 @@ const TransactionsPage = ({ kind }) => {
           title={config.listTitle}
           hint={items.length ? `${items.length} records` : undefined}
         >
-          <button
-            className="btn-soft"
-            onClick={download}
-            disabled={!items.length}
-          >
+          <button className="btn-soft" onClick={download} disabled={!items.length}>
             <Download className="h-4 w-4" aria-hidden="true" /> Download Excel
           </button>
         </CardHeader>
 
         {loading ? (
           <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
-            <Skeleton className="h-16 bg-[#F5F7FC]!" />
-            <Skeleton className="h-16 bg-[#F5F7FC]!" />
-            <Skeleton className="h-16 bg-[#F5F7FC]!" />
-            <Skeleton className="h-16 bg-[#F5F7FC]!" />
+            <Skeleton className="h-16 bg-bg-light!" />
+            <Skeleton className="h-16 bg-bg-light!" />
+            <Skeleton className="h-16 bg-bg-light!" />
+            <Skeleton className="h-16 bg-bg-light!" />
           </div>
         ) : items.length ? (
           <ul className="grid grid-cols-1 gap-x-6 gap-y-1 md:grid-cols-2">
@@ -103,20 +99,16 @@ const TransactionsPage = ({ kind }) => {
             ))}
           </ul>
         ) : (
-          <div className="rounded-2xl bg-[#F5F7FC] border border-[#D4DDF3] px-4 py-10 text-center">
-            <p className="font-semibold text-[#0B2452]">{config.emptyTitle}</p>
-            <p className="mt-1 text-sm font-normal text-[#556987]">{config.emptyHint}</p>
+          <div className="rounded-2xl bg-bg-light border border-finora-border px-4 py-10 text-center">
+            <p className="font-semibold text-finora-primary">{config.emptyTitle}</p>
+            <p className="mt-1 text-sm font-normal text-finora-muted">{config.emptyHint}</p>
           </div>
         )}
       </section>
 
       {formOpen && (
         <Modal title={config.addLabel} onClose={closeForm}>
-          <TransactionForm
-            config={config}
-            onSubmit={handleAdd}
-            onCancel={closeForm}
-          />
+          <TransactionForm config={config} onSubmit={handleAdd} onCancel={closeForm} />
         </Modal>
       )}
 

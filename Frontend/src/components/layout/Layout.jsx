@@ -28,9 +28,9 @@ const Layout = () => {
   const toggleMenu = () => setOpenedAt(menuOpen ? null : pathname);
 
   return (
-    <div className="min-h-screen bg-[#F5F7FC] lg:pl-64">
+    <div className="min-h-screen bg-bg-light lg:pl-64">
       {/* Mobile top bar */}
-      <header className="sticky top-0 z-30 flex items-center justify-between bg-[#102D65] px-4 py-3 text-white lg:hidden">
+      <header className="sticky top-0 z-30 flex items-center justify-between bg-primary-navy px-4 py-3 text-white lg:hidden">
         <FinoraLogo theme="light" showSubtitle={false} size="sm" />
         <button
           onClick={toggleMenu}
@@ -48,7 +48,7 @@ const Layout = () => {
 
       {menuOpen && (
         <div
-          className="fixed inset-0 z-30 bg-[#0B2452]/60 lg:hidden"
+          className="fixed inset-0 z-30 bg-finora-primary/60 lg:hidden"
           onClick={closeMenu}
           aria-hidden="true"
         />
@@ -56,7 +56,7 @@ const Layout = () => {
 
       {/* Sidebar */}
       <aside
-        className={`fixed inset-y-0 left-0 z-40 flex w-64 flex-col bg-[#102D65] text-white transition-transform duration-200 lg:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-40 flex w-64 flex-col bg-primary-navy text-white transition-transform duration-200 lg:translate-x-0 ${
           menuOpen ? "translate-x-0" : "-translate-x-full max-lg:invisible"
         }`}
       >
@@ -70,7 +70,7 @@ const Layout = () => {
             <p className="truncate font-display text-lg font-semibold text-white">
               {user?.fullName}
             </p>
-            <p className="truncate text-xs text-[#AFC3EA]">{user?.email}</p>
+            <p className="truncate text-xs text-finora-secondary">{user?.email}</p>
           </div>
         </div>
 
@@ -82,8 +82,8 @@ const Layout = () => {
               className={({ isActive }) =>
                 `flex items-center gap-3 rounded-xl border-l-4 px-4 py-3 text-sm font-semibold transition-colors ${
                   isActive
-                    ? "border-[#FFB900] bg-white/10 text-white"
-                    : "border-transparent text-[#AFC3EA] hover:bg-white/10 hover:text-white"
+                    ? "border-primary-yellow bg-white/10 text-white"
+                    : "border-transparent text-finora-secondary hover:bg-white/10 hover:text-white"
                 }`
               }
             >
@@ -95,7 +95,7 @@ const Layout = () => {
         <div className="p-3">
           <button
             onClick={logout}
-            className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-[#AFC3EA] hover:bg-white/10 hover:text-white cursor-pointer"
+            className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-finora-secondary hover:bg-white/10 hover:text-white cursor-pointer"
           >
             <LogOut className="h-5 w-5" aria-hidden="true" /> Log out
           </button>

@@ -24,11 +24,7 @@
 }
 
 .left-section {
-  background: linear-gradient(
-    135deg,
-    #102D65 0%,
-    #4779D5 100%
-  );
+  background: linear-gradient(135deg, #102D65 0%, #4779D5 100%);
 }
 
 @theme {
@@ -40,14 +36,12 @@
   --color-primary-blue: #4779D5;
   --color-primary-yellow: #FFB900;
 
-  --color-bg-white: #FFFFFF;
   --color-bg-light: #F5F7FC;
 
-  --color-text-primary: #0B2452;
-  --color-text-secondary: #AFC3EA;
-  --color-text-muted: #556987;
-
-  --color-border-color: #D4DDF3;
+  --color-finora-primary: #0B2452;
+  --color-finora-secondary: #AFC3EA;
+  --color-finora-muted: #556987;
+  --color-finora-border: #D4DDF3;
 
   --color-success: #16A34A;
   --color-danger: #EF4444;
@@ -57,17 +51,17 @@
 
 @layer base {
   html {
-    @apply bg-[#F5F7FC] text-[#0B2452] antialiased font-sans;
+    @apply bg-bg-light text-finora-primary antialiased font-sans;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
   body {
-    @apply min-h-screen bg-[#F5F7FC] font-sans font-normal text-[#0B2452];
+    @apply min-h-screen bg-bg-light font-sans font-normal text-finora-primary;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
   h1,
   h2,
   h3 {
-    @apply font-bold tracking-tight text-[#0B2452];
+    @apply font-bold tracking-tight text-finora-primary;
   }
   button:not(:disabled) {
     cursor: pointer;
@@ -82,11 +76,11 @@
 }
 
 @utility card {
-  @apply rounded-2xl bg-white border border-[#D4DDF3] p-5 shadow-card sm:p-6;
+  @apply rounded-2xl bg-white border border-finora-border p-5 shadow-card sm:p-6;
 }
 
 @utility field {
-  @apply w-full rounded-xl border border-[#D4DDF3] bg-white px-3.5 py-2.5 text-sm text-[#0B2452] placeholder:text-[#94A3B8] focus:border-[#4779D5] focus:ring-2 focus:ring-[#4779D5]/20 focus:outline-none transition-colors;
+  @apply w-full rounded-xl border border-finora-border bg-white px-3.5 py-2.5 text-sm text-finora-primary placeholder:text-finora-muted focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 focus:outline-none transition-colors;
 }
 
 @utility btn {
@@ -94,19 +88,19 @@
 }
 
 @utility btn-primary {
-  @apply btn bg-[#102D65] text-white hover:bg-[#1a3d82] active:bg-[#0B2452];
+  @apply btn bg-primary-navy text-white hover:bg-primary-blue active:bg-finora-primary;
 }
 
 @utility btn-soft {
-  @apply btn bg-[#F5F7FC] text-[#0B2452] border border-[#D4DDF3] hover:bg-[#E8EEFB] hover:text-[#102D65];
+  @apply btn bg-bg-light text-finora-primary border border-finora-border hover:bg-finora-border hover:text-primary-navy;
 }
 
 @utility btn-danger {
-  @apply btn bg-[#EF4444] text-white hover:bg-[#dc2626];
+  @apply btn bg-danger text-white hover:bg-danger/90;
 }
 
 @utility btn-yellow {
-  @apply btn bg-[#FFB900] text-[#0B2452] hover:bg-[#eab007] active:scale-[0.99];
+  @apply btn bg-primary-yellow text-finora-primary hover:bg-primary-yellow/90 active:scale-[0.99];
 }
 
 @media (prefers-reduced-motion: reduce) {

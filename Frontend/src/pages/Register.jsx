@@ -94,13 +94,13 @@ const Register = () => {
       footer={
         <div className="relative mt-8 flex items-center justify-center">
           <div className="absolute inset-0 flex items-center" aria-hidden="true">
-            <div className="w-full border-t border-[#D4DDF3]" />
+            <div className="w-full border-t border-finora-border" />
           </div>
-          <div className="relative bg-white px-3 text-sm font-normal text-[#556987]">
+          <div className="relative bg-white px-3 text-sm font-normal text-finora-muted">
             Already have an account?{" "}
             <Link
               to="/login"
-              className="font-semibold text-[#4779D5] hover:underline inline-flex items-center gap-1"
+              className="font-semibold text-primary-blue hover:underline inline-flex items-center gap-1"
             >
               Log in <span aria-hidden="true">&rarr;</span>
             </Link>
@@ -114,7 +114,7 @@ const Register = () => {
           <button
             type="button"
             onClick={() => fileRef.current?.click()}
-            className="grid h-16 w-16 shrink-0 place-items-center overflow-hidden rounded-full border-2 border-dashed border-[#AFC3EA] bg-white transition-colors hover:border-[#4779D5] cursor-pointer"
+            className="grid h-16 w-16 shrink-0 place-items-center overflow-hidden rounded-full border-2 border-dashed border-finora-secondary bg-white transition-colors hover:border-primary-blue cursor-pointer"
             aria-label="Choose a profile photo"
           >
             {avatar ? (
@@ -124,12 +124,12 @@ const Register = () => {
                 className="h-full w-full object-cover"
               />
             ) : (
-              <Camera className="h-5 w-5 text-[#4779D5]" aria-hidden="true" />
+              <Camera className="h-5 w-5 text-primary-blue" aria-hidden="true" />
             )}
           </button>
           <div className="text-sm">
-            <p className="font-semibold text-[#0B2452]">Profile photo</p>
-            <p className="text-xs font-normal text-[#556987]">
+            <p className="font-semibold text-finora-primary">Profile photo</p>
+            <p className="text-xs font-normal text-finora-muted">
               Optional. JPG, PNG, WebP or GIF under 2 MB.
             </p>
           </div>
@@ -144,7 +144,7 @@ const Register = () => {
 
         {/* Full name input */}
         <div className="relative">
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-[#0B2452]">
+          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-finora-primary">
             <User className="h-5 w-5" aria-hidden="true" />
           </div>
           <input
@@ -153,7 +153,7 @@ const Register = () => {
             ref={nameRef}
             value={form.fullName}
             onChange={handleChange}
-            className="w-full rounded-2xl border border-[#D4DDF3] bg-white py-3.5 pl-11 pr-4 text-sm font-normal text-[#0B2452] placeholder:font-normal placeholder:text-[#94A3B8] transition-colors focus:border-[#4779D5] focus:ring-2 focus:ring-[#4779D5]/20 focus:outline-none"
+            className="w-full rounded-2xl border border-finora-border bg-white py-3.5 pl-11 pr-4 text-sm font-normal text-finora-primary placeholder:font-normal placeholder:text-finora-muted transition-colors focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 focus:outline-none"
             placeholder="Full name"
             autoComplete="name"
             aria-label="Full name"
@@ -162,7 +162,7 @@ const Register = () => {
 
         {/* Email input */}
         <div className="relative">
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-[#0B2452]">
+          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-finora-primary">
             <Mail className="h-5 w-5" aria-hidden="true" />
           </div>
           <input
@@ -172,7 +172,7 @@ const Register = () => {
             ref={emailRef}
             value={form.email}
             onChange={handleChange}
-            className="w-full rounded-2xl border border-[#D4DDF3] bg-white py-3.5 pl-11 pr-4 text-sm font-normal text-[#0B2452] placeholder:font-normal placeholder:text-[#94A3B8] transition-colors focus:border-[#4779D5] focus:ring-2 focus:ring-[#4779D5]/20 focus:outline-none"
+            className="w-full rounded-2xl border border-finora-border bg-white py-3.5 pl-11 pr-4 text-sm font-normal text-finora-primary placeholder:font-normal placeholder:text-finora-muted transition-colors focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 focus:outline-none"
             placeholder="Email address"
             autoComplete="email"
             aria-label="Email address"
@@ -199,7 +199,7 @@ const Register = () => {
         {/* Submit button */}
         <button
           type="submit"
-          className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#FFB900] py-3.5 text-base font-semibold text-[#0B2452] shadow-sm transition-all hover:bg-[#eab007] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60 cursor-pointer"
+          className="btn-yellow w-full py-3.5! text-base!"
           disabled={busy}
         >
           <span>{busy ? "Creating account..." : "Create account"}</span>

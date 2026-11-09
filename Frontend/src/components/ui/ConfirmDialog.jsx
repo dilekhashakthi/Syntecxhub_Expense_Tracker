@@ -10,7 +10,7 @@ const ConfirmDialog = ({
 }) => {
   return (
     <Modal title={title} onClose={onCancel}>
-      <p className="text-sm font-normal text-[#556987]">{message}</p>
+      <p className="text-sm font-normal text-finora-muted">{message}</p>
       <div className="mt-6 flex justify-end gap-3">
         <button className="btn-soft" onClick={onCancel} disabled={busy}>
           Cancel

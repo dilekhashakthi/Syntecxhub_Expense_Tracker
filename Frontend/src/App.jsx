@@ -11,7 +11,7 @@ import { LoaderCircle } from 'lucide-react'
 
 function Splash() {
   return (
-    <div className="flex min-h-screen items-center justify-center gap-2 text-[#4779D5]" role="status">
+    <div className="flex min-h-screen items-center justify-center gap-2 text-primary-blue" role="status">
       <div className="animate-spin">
         <LoaderCircle size={20} />
       </div>

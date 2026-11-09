@@ -22,7 +22,7 @@ const Avatar = ({ user, size = "h-12 w-12", text = "text-lg" }) => {
   return (
     <span
       aria-hidden="true"
-      className={`${size} ${text} grid shrink-0 place-items-center rounded-full bg-[#FFB900] font-display font-bold text-[#0B2452] shadow-sm`}
+      className={`${size} ${text} grid shrink-0 place-items-center rounded-full bg-primary-yellow font-display font-bold text-finora-primary shadow-sm`}
     >
       {initials}
     </span>

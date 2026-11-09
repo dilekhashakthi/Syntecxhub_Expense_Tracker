@@ -13,21 +13,21 @@ const TransactionCard = memo(function TransactionCard({
   const Arrow = isIncome ? TrendingUp : TrendingDown;
 
   return (
-    <li className="group flex items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-[#F5F7FC]">
-      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#F5F7FC] border border-[#D4DDF3]/60 text-[#0B2452] transition-colors group-hover:bg-white">
+    <li className="group flex items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-bg-light">
+      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-bg-light border border-finora-border/60 text-finora-primary transition-colors group-hover:bg-white">
         <TransactionIcon kind={kind} name={item.icon} className="h-5 w-5" />
       </span>
 
       <div className="min-w-0 flex-1">
-        <p className="truncate text-sm font-semibold text-[#0B2452]">{label}</p>
-        <p className="text-xs text-[#556987]">{longDate(item.date)}</p>
+        <p className="truncate text-sm font-semibold text-finora-primary">{label}</p>
+        <p className="text-xs text-finora-muted">{longDate(item.date)}</p>
       </div>
 
       {onDelete && (
         <button
           onClick={() => onDelete(item)}
           aria-label={`Delete ${label}`}
-          className="rounded-lg p-2 text-[#556987] transition-colors hover:bg-red-50 hover:text-[#EF4444] lg:opacity-0 lg:group-hover:opacity-100 lg:focus-visible:opacity-100 cursor-pointer"
+          className="rounded-lg p-2 text-finora-muted transition-colors hover:bg-danger/10 hover:text-danger lg:opacity-0 lg:group-hover:opacity-100 lg:focus-visible:opacity-100 cursor-pointer"
         >
           <Trash2 className="h-4 w-4" aria-hidden="true" />
         </button>
@@ -35,9 +35,7 @@ const TransactionCard = memo(function TransactionCard({
 
       <span
         className={`flex items-center gap-1 rounded-lg px-2.5 py-1 text-sm font-semibold tabular-nums ${
-          isIncome
-            ? "bg-[#16A34A]/10 text-[#16A34A]"
-            : "bg-[#EF4444]/10 text-[#EF4444]"
+          isIncome ? "bg-success/10 text-success" : "bg-danger/10 text-danger"
         }`}
       >
         <Arrow className="h-3.5 w-3.5" aria-hidden="true" />

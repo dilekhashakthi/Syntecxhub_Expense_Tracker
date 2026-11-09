@@ -2,8 +2,8 @@ import { memo } from "react";
 import { money } from "../../utils/helpers";
 
 const TONES = {
-  gain: "bg-[#16A34A]/10 text-[#16A34A]",
-  loss: "bg-[#EF4444]/10 text-[#EF4444]",
+  gain: "bg-success/10 text-success",
+  loss: "bg-danger/10 text-danger",
 };
 
 const StatCard = memo(function StatCard({
@@ -18,21 +18,21 @@ const StatCard = memo(function StatCard({
     <div
       className={`rounded-2xl p-5 shadow-card sm:p-6 transition-all ${
         hero
-          ? "bg-[#102D65] text-white border border-[#102D65]"
-          : "bg-white border border-[#D4DDF3] text-[#0B2452]"
+          ? "bg-primary-navy text-white border border-primary-navy"
+          : "bg-white border border-finora-border text-finora-primary"
       }`}
     >
       <div className="flex items-center gap-3">
         <span
           className={`grid h-11 w-11 place-items-center rounded-xl font-bold ${
-            hero ? "bg-[#FFB900] text-[#0B2452]" : TONES[tone]
+            hero ? "bg-primary-yellow text-finora-primary" : TONES[tone]
           }`}
         >
           <Icon className="h-5 w-5" aria-hidden="true" />
         </span>
         <span
           className={`text-sm font-medium ${
-            hero ? "text-[#AFC3EA]" : "text-[#556987]"
+            hero ? "text-finora-secondary" : "text-finora-muted"
           }`}
         >
           {label}
