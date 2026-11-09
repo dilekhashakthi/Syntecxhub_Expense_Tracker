@@ -52,4 +52,6 @@ async function getDashboardSummary(userId) {
   };
 }
 
-module.exports = getDashboardSummary;
+module.exports = {
+  getDashboardSummary,
+};

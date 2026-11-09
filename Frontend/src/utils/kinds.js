@@ -1,0 +1,28 @@
+export const KINDS = {
+  income: {
+    kind: "income",
+    title: "Income",
+    labelKey: "source",
+    labelName: "Income source",
+    labelPlaceholder: "Salary, freelance, dividends",
+    addLabel: "Add income",
+    overviewTitle: "Income overview",
+    overviewHint: "Your earnings by day",
+    listTitle: "Income sources",
+    emptyTitle: "No income recorded yet",
+    emptyHint: "Add your first income source to see it here.",
+  },
+  expense: {
+    kind: "expense",
+    title: "Expense",
+    labelKey: "category",
+    labelName: "Category",
+    labelPlaceholder: "Rent, groceries, dining out",
+    addLabel: "Add expense",
+    overviewTitle: "Expense overview",
+    overviewHint: "Your spending over time",
+    listTitle: "All expenses",
+    emptyTitle: "No expenses recorded yet",
+    emptyHint: "Add your first expense to see it here.",
+  },
+};

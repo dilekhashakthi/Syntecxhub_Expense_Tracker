@@ -1,0 +1,81 @@
+import {
+  BadgeDollarSign,
+  Banknote,
+  Baby,
+  Briefcase,
+  Building2,
+  Bus,
+  Coffee,
+  Coins,
+  Dumbbell,
+  Film,
+  Fuel,
+  Gift,
+  GraduationCap,
+  HandCoins,
+  HeartPulse,
+  House,
+  Landmark,
+  Laptop,
+  PawPrint,
+  PiggyBank,
+  Plane,
+  Receipt,
+  Shirt,
+  ShoppingCart,
+  Smartphone,
+  Store,
+  TrendingUp,
+  Utensils,
+  Wifi,
+  Wrench,
+  Zap,
+} from "lucide-react";
+
+export const ICON_OPTIONS = {
+  income: [
+    { key: "briefcase", label: "Salary", Icon: Briefcase },
+    { key: "laptop", label: "Freelance", Icon: Laptop },
+    { key: "trending-up", label: "Investments", Icon: TrendingUp },
+    { key: "landmark", label: "Interest", Icon: Landmark },
+    { key: "store", label: "Business", Icon: Store },
+    { key: "gift", label: "Gift", Icon: Gift },
+    { key: "hand-coins", label: "Side income", Icon: HandCoins },
+    { key: "piggy-bank", label: "Savings", Icon: PiggyBank },
+    { key: "badge-dollar-sign", label: "Bonus", Icon: BadgeDollarSign },
+    { key: "banknote", label: "Cash", Icon: Banknote },
+    { key: "coins", label: "Refund", Icon: Coins },
+    { key: "building", label: "Rental", Icon: Building2 },
+  ],
+  expense: [
+    { key: "house", label: "Housing", Icon: House },
+    { key: "shopping-cart", label: "Groceries", Icon: ShoppingCart },
+    { key: "utensils", label: "Dining out", Icon: Utensils },
+    { key: "coffee", label: "Coffee", Icon: Coffee },
+    { key: "bus", label: "Transport", Icon: Bus },
+    { key: "fuel", label: "Fuel", Icon: Fuel },
+    { key: "zap", label: "Utilities", Icon: Zap },
+    { key: "wifi", label: "Internet", Icon: Wifi },
+    { key: "smartphone", label: "Phone", Icon: Smartphone },
+    { key: "heart-pulse", label: "Health", Icon: HeartPulse },
+    { key: "graduation-cap", label: "Education", Icon: GraduationCap },
+    { key: "plane", label: "Travel", Icon: Plane },
+    { key: "film", label: "Entertainment", Icon: Film },
+    { key: "shirt", label: "Clothing", Icon: Shirt },
+    { key: "dumbbell", label: "Fitness", Icon: Dumbbell },
+    { key: "paw-print", label: "Pets", Icon: PawPrint },
+    { key: "baby", label: "Kids", Icon: Baby },
+    { key: "wrench", label: "Repairs", Icon: Wrench },
+  ],
+};
+
+export const DEFAULT_ICON_KEY = { income: "banknote", expense: "receipt" };
+
+export const FALLBACK_ICON = { income: Banknote, expense: Receipt };
+
+export const ICONS = Object.fromEntries(
+  Object.entries(ICON_OPTIONS).map(([kind, options]) => [
+    kind,
+    Object.fromEntries(options.map(({ key, Icon }) => [key, Icon])),
+  ]),
+);

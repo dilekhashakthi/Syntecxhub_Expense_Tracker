@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+:root {
+  /* Primary Colors */
+  --primary-navy: #102D65;
+  --primary-blue: #4779D5;
+  --primary-yellow: #FFB900;
+
+  /* Background Colors */
+  --bg-white: #FFFFFF;
+  --bg-light: #F5F7FC;
+
+  /* Text Colors */
+  --text-primary: #0B2452;
+  --text-secondary: #AFC3EA;
+  --text-muted: #556987;
+
+  /* Border Colors */
+  --border-color: #D4DDF3;
+
+  /* Status Colors */
+  --success: #16A34A;
+  --danger: #EF4444;
+}
+
+.left-section {
+  background: linear-gradient(
+    135deg,
+    #102D65 0%,
+    #4779D5 100%
+  );
+}
+
+@theme {
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Finora Color Palette */
+  --color-primary-navy: #102D65;
+  --color-primary-blue: #4779D5;
+  --color-primary-yellow: #FFB900;
+
+  --color-bg-white: #FFFFFF;
+  --color-bg-light: #F5F7FC;
+
+  --color-text-primary: #0B2452;
+  --color-text-secondary: #AFC3EA;
+  --color-text-muted: #556987;
+
+  --color-border-color: #D4DDF3;
+
+  --color-success: #16A34A;
+  --color-danger: #EF4444;
+
+  --shadow-card: 0 1px 3px 0 rgb(16 45 101 / 0.04), 0 4px 16px -4px rgb(16 45 101 / 0.08);
+}
+
+@layer base {
+  html {
+    @apply bg-[#F5F7FC] text-[#0B2452] antialiased font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  body {
+    @apply min-h-screen bg-[#F5F7FC] font-sans font-normal text-[#0B2452];
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-bold tracking-tight text-[#0B2452];
+  }
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+  }
+  .recharts-wrapper :focus {
+    outline: none;
+  }
+}
+
+@utility card {
+  @apply rounded-2xl bg-white border border-[#D4DDF3] p-5 shadow-card sm:p-6;
+}
+
+@utility field {
+  @apply w-full rounded-xl border border-[#D4DDF3] bg-white px-3.5 py-2.5 text-sm text-[#0B2452] placeholder:text-[#94A3B8] focus:border-[#4779D5] focus:ring-2 focus:ring-[#4779D5]/20 focus:outline-none transition-colors;
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60 cursor-pointer;
+}
+
+@utility btn-primary {
+  @apply btn bg-[#102D65] text-white hover:bg-[#1a3d82] active:bg-[#0B2452];
+}
+
+@utility btn-soft {
+  @apply btn bg-[#F5F7FC] text-[#0B2452] border border-[#D4DDF3] hover:bg-[#E8EEFB] hover:text-[#102D65];
+}
+
+@utility btn-danger {
+  @apply btn bg-[#EF4444] text-white hover:bg-[#dc2626];
+}
+
+@utility btn-yellow {
+  @apply btn bg-[#FFB900] text-[#0B2452] hover:bg-[#eab007] active:scale-[0.99];
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
